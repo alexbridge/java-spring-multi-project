@@ -1,0 +1,13 @@
+plugins {
+    id 'java-library'
+    id 'org.springframework.boot' version libs.versions.springBootVersion
+    id 'io.spring.dependency-management' version '1.1.6'
+}
+
+dependencies {
+    implementation libs.spring.boot.starter.base
+    implementation libs.spring.boot.starter.web
+
+    api projects.apiBookApi
+    implementation projects.apiCommons
+}

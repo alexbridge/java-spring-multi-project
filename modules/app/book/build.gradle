@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version libs.versions.springBootVersion
+    id 'io.spring.dependency-management' version '1.1.6'
+}
+
+bootJar {
+    mainClass = 'io.example.book.BookApplication'
+    dependsOn compileJava
+}
+
+dependencies {
+    compileOnly libs.bundles.compile.only
+    annotationProcessor libs.bundles.annotation.processors
+
+    implementation libs.bundles.spring.boot.app
+    implementation libs.springdoc.openapi
+
+    implementation projects.libsCommons
+
+    implementation projects.apiBookApi
+    implementation projects.defaultsConfig
+}

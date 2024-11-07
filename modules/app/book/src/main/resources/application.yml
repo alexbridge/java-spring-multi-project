@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: store
+  config:
+    import: classpath:/config/application.yml

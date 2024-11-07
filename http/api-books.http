@@ -1,0 +1,15 @@
+###
+# API Books
+
+@baseUrl = http://localhost:9001
+
+### Search Books
+POST {{baseUrl}}/books/search
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "foo"
+}
+
+

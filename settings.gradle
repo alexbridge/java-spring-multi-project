@@ -1,0 +1,23 @@
+rootProject.name = 'io-example-multi'
+
+dependencyResolutionManagement {
+    repositories {
+        mavenCentral()
+    }
+}
+
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+
+// -------- Auto modules inclusion ----------------
+def MODULES = "${settingsDir}/modules"
+
+new File(MODULES).eachFileRecurse {
+    if (it.directory && new File(it, 'build.gradle').exists()) {
+        def projectName = ":${it.getPath().replace(MODULES + '/', '').replace('/', '-')}"
+
+        logger.lifecycle("Installing ${projectName} from ${it.getPath()}")
+
+        include(projectName)
+        project(projectName).projectDir = it
+    }
+}

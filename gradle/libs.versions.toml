@@ -1,0 +1,46 @@
+[versions]
+# Spring
+springBootVersion = "3.3.5"
+springDocOpenAPIVersion = "2.6.0"
+
+# Code generation
+lombokVersion = "1.18.30"
+
+# Misc
+jacksonVersion = "2.14.1"
+
+[libraries]
+plugin-spring-boot = { group = "org.springframework.boot", name = "spring-boot-gradle-plugin", version.ref = "springBootVersion" }
+
+spring-dependencies = { group = "org.springframework.boot", name = "spring-boot-dependencies", version.ref = "springBootVersion" }
+spring-boot-starter-base = { module = "org.springframework.boot:spring-boot-starter" }
+spring-boot-starter-web = { module = "org.springframework.boot:spring-boot-starter-web" }
+spring-autoconfigure-processor = { module = "org.springframework.boot:spring-boot-autoconfigure-processor" }
+spring-configuration-processor = { module = "org.springframework.boot:spring-boot-configuration-processor" }
+springdoc-openapi = { module = "org.springdoc:springdoc-openapi-starter-webmvc-ui", version.ref = "springDocOpenAPIVersion" }
+
+lombok = { group = "org.projectlombok", name = "lombok", version.ref = "lombokVersion" }
+
+jackson-bom = { module = "com.fasterxml.jackson:jackson-bom", version.ref = "jacksonVersion" }
+jackson-core = { module = "com.fasterxml.jackson.core:jackson-annotations", version.ref = "jacksonVersion" }
+jackson-databind = { module = "com.fasterxml.jackson.core:jackson-databind", version.ref = "jacksonVersion" }
+jackson-jdk8 = { module = "com.fasterxml.jackson.datatype:jackson-datatype-jdk8", version.ref = "jacksonVersion" }
+jackson-jsr310 = { module = "com.fasterxml.jackson.datatype:jackson-datatype-jsr310", version.ref = "jacksonVersion" }
+jackson-parameters-names = { module = "com.fasterxml.jackson.module:jackson-module-parameter-names", version.ref = "jacksonVersion" }
+
+[bundles]
+spring-boot-app = [
+    "spring-boot-starter-base",
+    "spring-boot-starter-web",
+    "lombok"
+]
+compile-only = ["spring-autoconfigure-processor", "spring-configuration-processor"]
+annotation-processors = [
+    "spring-autoconfigure-processor",
+    "spring-configuration-processor",
+    "lombok"
+]
+jackson = ["jackson-core", "jackson-databind", "jackson-jdk8", "jackson-jsr310", "jackson-parameters-names"]
+
+[plugins]
+spring-boot-plugin = { id = 'org.springframework.boot', version.ref = "springBootVersion" }

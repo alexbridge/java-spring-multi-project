@@ -1,0 +1,5 @@
+io:
+  example:
+    api:
+      book:
+        base-url: http://localhost:9001
