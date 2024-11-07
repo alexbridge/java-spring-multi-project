@@ -1,0 +1,11 @@
+services:
+  books:
+    container_name: io-example-books
+    image: io-example-books:latest
+    ports:
+      - 9001:8080
+  store:
+    container_name: io-example-store
+    image: io-example-store:latest
+    ports:
+      - 9002:8080
