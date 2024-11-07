@@ -1,7 +1,7 @@
 plugins {
     id 'java-library'
-    id 'org.springframework.boot' version libs.versions.springBootVersion
-    id 'io.spring.dependency-management' version '1.1.6'
+    alias(libs.plugins.spring.boot.plugin)
+    alias(libs.plugins.spring.dependencies.plugin)
 }
 
 dependencies {

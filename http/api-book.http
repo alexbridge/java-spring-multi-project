@@ -1,0 +1,9 @@
+###
+# API Book
+
+@baseUrl = http://localhost:9001
+
+### Search Book
+GET {{baseUrl}}/books/100
+Accept: application/json
+

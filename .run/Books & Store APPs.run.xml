@@ -1,0 +1,7 @@
+<component name="ProjectRunConfigurationManager">
+    <configuration default="false" name="Books &amp; Store APPs" type="CompoundRunConfigurationType">
+        <toRun name="BookApplication" type="Application"/>
+        <toRun name="StoreApplication" type="Application"/>
+        <method v="2"/>
+    </configuration>
+</component>
