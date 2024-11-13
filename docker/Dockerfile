@@ -18,5 +18,5 @@ USER spring
 
 CMD ["java", "-jar", "/app/spring-boot.jar"]
 
-HEALTHCHECK --interval=10s --timeout=5s --retries=10 \
-    CMD curl -f http://localhost:9999/actuator/health || exit 1
+HEALTHCHECK --interval=2s --timeout=5s --retries=10 \
+    CMD curl -s http://localhost:8080 | grep 404 || exit 1

@@ -5,7 +5,7 @@ plugins {
 }
 
 bootJar {
-    mainClass = 'io.example.book.BooksApplication'
+    mainClass = 'io.example.books.BooksApplication'
     dependsOn compileJava
 }
 

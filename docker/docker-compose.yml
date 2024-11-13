@@ -15,3 +15,6 @@ services:
         - SPRING_JAR=app-store-server-1.0.0.jar
     ports:
       - 9002:8080
+    depends_on:
+      books:
+        condition: service_healthy
