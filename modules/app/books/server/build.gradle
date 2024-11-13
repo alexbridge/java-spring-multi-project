@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+    alias(libs.plugins.spring.boot.plugin)
+    alias(libs.plugins.spring.dependencies.plugin)
+}
+
+bootJar {
+    mainClass = 'io.example.book.BooksApplication'
+    dependsOn compileJava
+}
+
+dependencies {
+    compileOnly libs.bundles.compile.only
+    annotationProcessor libs.bundles.annotation.processors
+
+    implementation libs.bundles.spring.boot.app
+    implementation libs.springdoc.openapi
+
+    implementation projects.libsCommons
+
+    implementation projects.appBooksApi
+    implementation projects.defaultsConfig
+}
