@@ -1,20 +1,22 @@
 services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - 80:80
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
   books:
-    container_name: io-example-books
     build:
       context: .
       args:
         - SPRING_JAR=app-books-server-1.0.0.jar
-    ports:
-      - 9001:8080
+    deploy:
+      replicas: 2
   store:
-    container_name: io-example-store
     build:
       context: .
       args:
         - SPRING_JAR=app-store-server-1.0.0.jar
-    ports:
-      - 9002:8080
     depends_on:
       books:
         condition: service_healthy
