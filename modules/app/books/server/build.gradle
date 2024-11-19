@@ -17,6 +17,7 @@ dependencies {
     implementation libs.springdoc.openapi
 
     implementation projects.libsCommons
+    implementation projects.libsSpringCommons
 
     implementation projects.appBooksApi
     implementation projects.defaultsConfig

@@ -3,7 +3,19 @@
 
 @baseUrl = http://localhost:9001
 
-### Search Book
-GET {{baseUrl}}/books/100
+### Get Book 1
+GET {{baseUrl}}/books/1
+Accept: application/json
+
+### Get Book 2
+GET {{baseUrl}}/books/2
+Accept: application/json
+
+### Get Book 3
+GET {{baseUrl}}/books/3
+Accept: application/json
+
+### Get Book 4
+GET {{baseUrl}}/books/4
 Accept: application/json
 
