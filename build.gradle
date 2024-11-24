@@ -20,4 +20,11 @@ allprojects {
 
 ext.libs = rootProject.libs
 
+idea {
+    module {
+        downloadJavadoc = true
+        downloadSources = true
+    }
+}
+
 defaultTasks('cleanIdea', 'cleanIdeaProject', 'ideaProject', 'idea')

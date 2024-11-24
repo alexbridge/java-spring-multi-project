@@ -3,9 +3,10 @@ package io.example.books.api.books;
 import io.example.books.api.BooksApi;
 import io.example.books.api.model.Book;
 import io.example.books.api.model.SearchBooks;
+import io.example.spring.commons.aspect.UpperSnakeCase;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import org.springframework.http.converter.json.MappingJacksonValue;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -34,6 +35,13 @@ public class BooksController implements BooksApi {
     @ResponseBody
     @ApiResponse(responseCode = "200", description = "Book")
     public Book getBook(String id) {
+        return new Book(id, "Book with id %s".formatted(id));
+    }
+
+    @GetMapping("/api/books/{id}/upper_snake_case")
+    @ResponseBody
+    @ApiResponse(responseCode = "200", description = "Book")
+    public UpperSnakeCase getBookUpperSnakeCase(String id) {
         return new Book(id, "Book with id %s".formatted(id));
     }
 }

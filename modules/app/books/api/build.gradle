@@ -10,5 +10,6 @@ dependencies {
     implementation libs.spring.boot.starter.web
 
     implementation projects.libsHttp
+    implementation projects.libsSpringCommons
 }
 

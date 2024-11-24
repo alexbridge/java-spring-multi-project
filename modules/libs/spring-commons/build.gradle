@@ -6,6 +6,7 @@ plugins {
 
 dependencies {
   implementation libs.spring.boot.starter.base
+  implementation libs.spring.boot.starter.web
   implementation libs.bundles.jackson
 
 }

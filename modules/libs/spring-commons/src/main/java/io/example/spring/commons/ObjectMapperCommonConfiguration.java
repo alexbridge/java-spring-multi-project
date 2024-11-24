@@ -2,7 +2,6 @@ package io.example.spring.commons;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
-import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -12,8 +11,10 @@ public class ObjectMapperCommonConfiguration {
 
     @Bean
     @Primary
-    ObjectMapper commonObjectMapper() {
-        return new ObjectMapper();
+    ObjectMapper objectMapper() {
+        var objectMapper = new ObjectMapper();
+        objectMapper.setPropertyNamingStrategy(new PropertyNamingStrategies.LowerCamelCaseStrategy());
+        return  objectMapper;
     }
 
     @Bean("snakeCaseObjectMapper")
