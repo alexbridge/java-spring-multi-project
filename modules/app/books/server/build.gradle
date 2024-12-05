@@ -14,6 +14,7 @@ dependencies {
     annotationProcessor libs.bundles.annotation.processors
 
     implementation libs.bundles.spring.boot.app
+    implementation libs.spring.boot.starter.actuator
     implementation libs.springdoc.openapi
 
     implementation projects.libsCommons

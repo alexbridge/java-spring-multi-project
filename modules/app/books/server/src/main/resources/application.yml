@@ -3,3 +3,18 @@ spring:
     name: store
   config:
     import: classpath:/config/application.yml
+  lifecycle:
+    timeout-per-shutdown-phase: 20s
+
+management:
+  server:
+    port: 9999
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    shutdown:
+      enabled: true
+    health:
+      enabled: true

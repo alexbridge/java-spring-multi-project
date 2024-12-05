@@ -10,8 +10,10 @@ services:
       context: .
       args:
         - SPRING_JAR=app-books-server-1.0.0.jar
+    ports:
+      - 9999:9999
     deploy:
-      replicas: 2
+      replicas: 1
   store:
     build:
       context: .

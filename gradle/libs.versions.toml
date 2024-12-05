@@ -13,6 +13,7 @@ jackson-version = "2.14.1"
 [libraries]
 spring-boot-starter-base = { module = "org.springframework.boot:spring-boot-starter" }
 spring-boot-starter-web = { module = "org.springframework.boot:spring-boot-starter-web" }
+spring-boot-starter-actuator = { module = "org.springframework.boot:spring-boot-starter-actuator" }
 spring-autoconfigure-processor = { module = "org.springframework.boot:spring-boot-autoconfigure-processor" }
 spring-configuration-processor = { module = "org.springframework.boot:spring-boot-configuration-processor" }
 springdoc-openapi = { module = "org.springdoc:springdoc-openapi-starter-webmvc-ui", version.ref = "spring-doc-open-api-version" }

@@ -2,7 +2,7 @@ FROM eclipse-temurin:21-jre-alpine
 
 ARG SPRING_JAR
 
-EXPOSE 8080
+EXPOSE 8080 9999
 
 RUN addgroup spring && adduser -DH -G spring spring
 
