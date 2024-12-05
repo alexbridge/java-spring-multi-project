@@ -1,0 +1,13 @@
+###
+# API Actuator
+
+@baseUrl = http://localhost:9999
+
+### Actuator
+GET {{baseUrl}}/actuator
+
+### Health
+GET {{baseUrl}}/actuator/health
+
+### Actuator shutdown
+POST {{baseUrl}}/actuator/shutdown
